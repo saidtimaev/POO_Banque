@@ -108,7 +108,16 @@ Class Film
         $this->castings[] =  $casting; 
     }
 
-    
+    public function afficherCastingFilm()
+    {
+        $result = "<h1> Casting de $this (".$this->getDateSortie()->format('Y').") :</h1><br><ul>";
+
+        foreach($this->castings as $casting)
+        {
+            $result .= "<li>".$casting->getRole()." (".$casting->getActeur().")</ul>";
+        }
+        return $result;
+    }
     
     public function __toString()
     {
