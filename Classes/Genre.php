@@ -30,6 +30,18 @@ Class Genre
         $this->films[] = $film;
     }
 
+    public function AfficherFilmsGenre()
+    {
+        $result = "<h1>Les films dont le genre est $this sont : <br></h1><ul>";
+
+        foreach ($this->films as $film)
+        {
+            $result .= "<li>".$film."</ul><br>";
+        }
+
+        return $result;
+    }
+
     public function __toString()
     {
         return $this->designation;
