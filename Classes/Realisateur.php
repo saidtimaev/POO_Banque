@@ -30,4 +30,15 @@ Class Realisateur extends Personne
     {
         $this->filmsRealises[] = $filmRealises;
     }
+
+    public function afficherFilmsRealises()
+    {
+        $result = "<h1>Le réalisateur $this a réalisé les films suivants :</h1><br><ul>";
+
+        foreach($this->filmsRealises as $filmsRealises)
+        {
+            $result .= "<li>".$filmsRealises."</ul><br>";
+        }
+        return $result;
+    }
 }
