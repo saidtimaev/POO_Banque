@@ -11,8 +11,6 @@ Class Acteur extends Personne
     }
 
 
-
-
     public function getCastingsRealises()
     {
         return $this->castings;
@@ -28,5 +26,18 @@ Class Acteur extends Personne
     public function addCasting(Casting $casting)
     {
         $this->castings[] =  $casting; 
+    }
+
+    public function afficherFilmsActeur()
+    {
+        $result = "<h1>L'acteur $this a joué dans les films suivants :</h1><br><ul>";
+
+        foreach($this->castings as $casting)
+        {
+            $result .= "<li>".$casting->getFilm()."</ul><br>";
+        }
+
+        return $result;
+
     }
 }

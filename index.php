@@ -15,6 +15,9 @@ $role1 = new Role("Blade");
 
 $casting1 = new Casting($acteur1, $film1, $role1);
 
-echo $genre1->afficherFilmsGenre();
+// echo $genre1->afficherFilmsGenre();
+
+echo $acteur1->afficherFilmsActeur();
+
 
 // var_dump($film1);
