@@ -3,35 +3,18 @@
 
 Class Film
 {
-    private int $id_film;
     private string $titre;
     private int $duree;
     private string $resume;
 
-    public function __construct(int $id_film, string $titre, int $duree, string $resume)
+    public function __construct(string $titre, int $duree, string $resume)
     {
-        $this->id_film = $id_film;
         $this->titre = $titre;
         $this->duree = $duree;
         $this->resume = $resume;
     }
 
     
-
-
-
-    public function getId_film(): int
-    {
-        return $this->id_film;
-    }
-
-    public function setId_film($id_film)
-    {
-        $this->id_film = $id_film;
-
-        return $this;
-    }
-
     public function getTitre(): string
     {
         return $this->titre;
