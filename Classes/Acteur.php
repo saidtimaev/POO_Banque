@@ -1,31 +1,29 @@
 <?php
 
-Class Realisateur extends Personne
+Class Acteur extends Personne
 {
-    private array $filmsRealises;
+    private array $filmsJoues;
 
     public function __construct(string $nom, string $prenom, string $sexe, string $dateNaissance)
     {
         parent::__construct($nom, $prenom, $sexe, $dateNaissance);
-        $this->filmsRealises = [];
+        $this->filmsJoues = [];
     }
 
     
-
-
-    public function getFilmsRealises(): array
+    public function getFilmsJoues(): array
     {
-        return $this->filmsRealises;
+        return $this->filmsJoues;
     }
 
- 
-    public function setFilmsRealises($filmsRealises)
+    public function setFilmsJoues($filmsJoues)
     {
-        $this->filmsRealises = $filmsRealises;
+        $this->filmsJoues = $filmsJoues;
 
         return $this;
     }
 
+    
     public function _toString()
     {
         return $this->prenom." ".$this->nom;
