@@ -30,7 +30,7 @@ Class Genre
         $this->films[] = $film;
     }
 
-    public function _toString()
+    public function __toString()
     {
         return $this->designation;
     }

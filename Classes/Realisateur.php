@@ -30,9 +30,4 @@ Class Realisateur extends Personne
     {
         $this->filmsRealises[] = $filmRealises;
     }
-
-    public function _toString()
-    {
-        return $this->prenom." ".$this->nom;
-    }
 }

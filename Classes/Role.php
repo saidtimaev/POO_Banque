@@ -25,9 +25,9 @@ class Role
         return $this;
     }
 
-    public function addCasting(Acteur $acteur, Film $film, Role $role)
+    public function addCasting(Casting $casting)
     {
-        $this->castings[] =  [$acteur, $film, $role]; 
+        $this->castings[] =  $casting; 
     }
 
     
@@ -43,7 +43,7 @@ class Role
         return $this;
     }
 
-    public function _toString()
+    public function __toString()
     {
         return $this->designation;
     }

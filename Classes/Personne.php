@@ -69,7 +69,7 @@ Class Personne
     }
 
 
-    public function _toString()
+    public function __toString()
     {
         return $this->nom." ".$this->prenom;
     }

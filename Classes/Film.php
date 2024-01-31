@@ -103,11 +103,12 @@ Class Film
         return $this;
     }
 
-    public function addCasting(Acteur $acteur, Film $film, Role $role)
+    public function addCasting(Casting $casting)
     {
-        $this->castings[] =  [$acteur, $film, $role]; 
+        $this->castings[] =  $casting; 
     }
 
+    
     
     public function __toString()
     {
