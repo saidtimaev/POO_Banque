@@ -4,10 +4,12 @@
 Class Genre
 {
     private string $designation;
+    private array $films;
 
     public function __construct(string $designation)
     {
         $this->designation = $designation;
+        $this->films = [];
     }
 
 
@@ -21,6 +23,11 @@ Class Genre
         $this->designation = $designation;
 
         return $this;
+    }
+
+    public function addFilm(Film $film)
+    {
+        $this->films[] = $film;
     }
 
     public function _toString()

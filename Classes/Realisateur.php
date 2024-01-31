@@ -26,6 +26,11 @@ Class Realisateur extends Personne
         return $this;
     }
 
+    public function addFilmRealises(Film $filmRealises)
+    {
+        $this->filmsRealises[] = $filmRealises;
+    }
+
     public function _toString()
     {
         return $this->prenom." ".$this->nom;
