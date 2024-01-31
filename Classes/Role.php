@@ -43,6 +43,17 @@ class Role
         return $this;
     }
 
+    public function afficherActeursRole()
+    {
+        $result = "<h1>Les acteurs ayant incarné le rôle de $this sont :</h1><br><ul>";
+
+        foreach($this->castings as $casting)
+        {
+            $result .= "<li>".$casting->getActeur()."</ul>";
+        }
+        return $result;
+    }
+
     public function __toString()
     {
         return $this->designation;
