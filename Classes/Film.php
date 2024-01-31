@@ -6,12 +6,14 @@ Class Film
     private string $titre;
     private int $duree;
     private string $resume;
+    private DateTime $dateSortie;
 
-    public function __construct(string $titre, int $duree, string $resume)
+    public function __construct(string $titre, int $duree, string $resume, string $dateSortie)
     {
         $this->titre = $titre;
         $this->duree = $duree;
         $this->resume = $resume;
+        $this->dateSortie = new DateTime($dateSortie);
     }
 
     
@@ -27,6 +29,7 @@ Class Film
         return $this;
     }
 
+
     public function getDuree(): int
     {
         return $this->duree;
@@ -38,6 +41,7 @@ Class Film
 
         return $this;
     }
+
 
     public function getResume(): string
     {
@@ -51,9 +55,22 @@ Class Film
         return $this;
     }
 
+    
+    public function getDateSortie(): DateTime
+    {
+        return $this->dateSortie;
+    }
+
+    public function setDateSortie($dateSortie)
+    {
+        $this->dateSortie = $dateSortie;
+
+        return $this;
+    }
+
+
     public function __toString()
     {
         return $this->titre;
     }
-    
 }
