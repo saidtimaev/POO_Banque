@@ -2,30 +2,33 @@
 
 Class Acteur extends Personne
 {
-    private array $filmsJoues;
+    private array $castingsRealises;
 
     public function __construct(string $nom, string $prenom, string $sexe, string $dateNaissance)
     {
         parent::__construct($nom, $prenom, $sexe, $dateNaissance);
-        $this->filmsJoues = [];
+        $this->castingsRealises = [];
     }
 
-    
-    public function getFilmsJoues(): array
+
+
+
+    public function getCastingsRealises()
     {
-        return $this->filmsJoues;
+        return $this->castings;
     }
 
-    public function setFilmsJoues($filmsJoues)
+    public function setCastingsRealises($castingsRealises)
     {
-        $this->filmsJoues = $filmsJoues;
+        $this->castingsRealises = $castingsRealises;
 
         return $this;
     }
 
-    
+        
     public function _toString()
     {
         return $this->prenom." ".$this->nom;
     }
+
 }
