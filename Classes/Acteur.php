@@ -2,12 +2,12 @@
 
 Class Acteur extends Personne
 {
-    private array $castingsRealises;
+    private array $castings;
 
     public function __construct(string $nom, string $prenom, string $sexe, string $dateNaissance)
     {
         parent::__construct($nom, $prenom, $sexe, $dateNaissance);
-        $this->castingsRealises = [];
+        $this->castings = [];
     }
 
 
@@ -23,6 +23,11 @@ Class Acteur extends Personne
         $this->castingsRealises = $castingsRealises;
 
         return $this;
+    }
+
+    public function addCasting(Acteur $acteur, Film $film, Role $role)
+    {
+        $this->castings[] =  [$acteur, $film, $role]; 
     }
 
         
