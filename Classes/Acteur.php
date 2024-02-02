@@ -44,13 +44,13 @@ Class Acteur extends Personne
             // Dates[clé de l'objet stocké] = objet casting sur lequel on récupère l'objet film sur lequel on récupère la propriété dateSortie dans le format Année/Mois/Jour
             $dates[$key] = $casting->getFilm()->getDateSortie()->format('Y-m-d');
 
-            dates[0] = "21-08-1998"
-            dates[1] = "19-06-2002"
-            dates[2] = "20-08-2014"
+            // dates[0] = "21-08-1998"
+            // dates[1] = "19-06-2002"
+            // dates[2] = "20-08-2014"
 
-            castings[0] = castingBlade1
-            casting[1] = castingBlade2
-            casting[2] = castingExpendables3
+            // castings[0] = castingBlade1
+            // casting[1] = castingBlade2
+            // casting[2] = castingExpendables3
         }
 
         // Fonction qui permet de trier le tableau multidimensionnel castings selon le tri du tableau dates
