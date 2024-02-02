@@ -74,7 +74,7 @@ $castingExpendablesTrois1 = new Casting($wesleySnipes, $filmExpendables3, $roleD
 
 
 
-echo $wesleySnipes->afficherFilmsActeur();
+// echo $wesleySnipes->afficherFilmsActeur();
 
 // echo $horror->afficherFilmsGenre();
 
@@ -84,5 +84,6 @@ echo $wesleySnipes->afficherFilmsActeur();
 
 // echo $guillermoDelToro->afficherFilmsRealises();
 
+var_dump($castingBlade1);
 
 // var_dump($film1);

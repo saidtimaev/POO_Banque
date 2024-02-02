@@ -1,5 +1,6 @@
 <?php 
 
+// Classe Casting qui va contenir 3 objets
 Class Casting
 {
     private Acteur $acteur;
