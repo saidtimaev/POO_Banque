@@ -6,8 +6,11 @@ spl_autoload_register(function ($class_name) {
 $stephenNorrington = new Realisateur("Norrington", "Stephen", "Homme", "00-02-1964");
 $guillermoDelToro = new Realisateur("Del Toro", "Guillermo", "Homme", "09-10-1964");
 $yannDemange = new Realisateur("Demande", "Yann", "Homme", "07-11-1977");
+$patrickHughes = new Realisateur("Hughes", "Patrick", "Homme", "13-05-1978");
 
 $horror = new Genre("Horror");
+$actionFantastique = new Genre("Action fantastique");
+$action = new Genre("Action");
 
 $filmBlade1 = new Film(
     "Blade",
@@ -35,26 +38,51 @@ $filmBladeQuatre = new Film(
     $yannDemange
 );
 
+$filmHellboy = new Film(
+    "Hellboy",
+    80,
+    "Né des flammes de l'enfer, Hellboy fut arraché aux forces maléfiques lorsque les Alliés remportèrent la Seconde Guerre mondiale. Le professeur Broom l'a élevé comme un fils au sein du Bureau des recherches paranormales de la Défense. Hellboy a appris à maîtriser ses dons extraordinaires entouré d'une étonnante famille : le télépathe Abe Sapien et Liz Sherman, capable de déclencher le feu par la pensée.",
+    "11-08-2004",
+    $actionFantastique,
+    $guillermoDelToro
+);
+
+$filmExpendables3 = new Film(
+    "Expendables 3",
+    95,
+    "Barney, Christmas et le reste de l'équipe affrontent Conrad Stonebanks, qui fut autrefois le fondateur des Expendables avec Barney. Stonebanks devint par la suite un redoutable trafiquant d'armes, que Barney fut obligé d'abattre. Du moins, c'est ce qu'il croyait. Ayant échappé à la mort, Stonebanks a maintenant pour seul objectif d'éliminer l'équipe des Expendables.",
+    "20-08-2014",
+    $action,
+    $patrickHughes
+);
+
 $wesleySnipes = new Acteur("Snipes", "Wesley", "Homme", "31-07-1961");
 $stephenDorff = new Acteur("Dorff", "Stephen", "Homme", "29-07-1973");
 $aliMahershala = new Acteur("Mahershala", "Ali", "Homme", "16-02-1974");
 
 $roleBlade = new Role("Blade");
 $roleDeaconFrost = new Role("Deacon Frost");
+$roleDoc = new Role("Doc");
 
 $castingBlade1 = new Casting($wesleySnipes, $filmBlade1, $roleBlade);
 $castingBlade2 = new Casting($stephenDorff, $filmBlade1, $roleDeaconFrost);
 $castingBladeDeux1 = new Casting($wesleySnipes, $filmBlade2, $roleBlade);
 $castingBladeQuatre1 = new Casting($aliMahershala, $filmBladeQuatre, $roleBlade);
+$castingExpendablesTrois1 = new Casting($wesleySnipes, $filmExpendables3, $roleDoc);
 
 
 
 
-// echo $genre1->afficherFilmsGenre();
 
-// echo $acteur1->afficherFilmsActeur();
+echo $wesleySnipes->afficherFilmsActeur();
 
-echo $horror->afficherFilmsGenre();
+// echo $horror->afficherFilmsGenre();
+
+// echo $roleBlade->afficherActeursRole();
+
+// echo $filmBlade1->afficherCastingFilm();
+
+// echo $guillermoDelToro->afficherFilmsRealises();
 
 
 // var_dump($film1);

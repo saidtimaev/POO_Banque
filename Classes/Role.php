@@ -49,8 +49,11 @@ class Role
 
         foreach($this->castings as $casting)
         {
-            $result .= "<li>".$casting->getActeur()."</ul>";
+            $result .= "<li>".$casting->getActeur()." dans le film ".$casting->getFilm()."</li>";
         }
+
+        $result .= "</ul>";
+
         return $result;
     }
 

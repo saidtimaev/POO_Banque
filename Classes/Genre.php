@@ -32,12 +32,23 @@ Class Genre
 
     public function AfficherFilmsGenre()
     {
-        $result = "<h1>Les films dont le genre est $this sont : <br></h1><ul>";
+
+        $dates = [];
+        foreach ($this->films as $film)
+        {
+            $dates[] = $film->getDateSortie()->format('Y-m-d');
+        }
+
+        array_multisort($dates, SORT_DESC, $this->films);
+
+        $result = "<h1>Le genre $this est associé à ".count($this->films)." films</h1><ul>";
 
         foreach ($this->films as $film)
         {
-            $result .= "<li>".$film."</ul><br>";
+            $result .= "<li>".$film." (".$film->getDateSortie()->format('Y').")</li>";
         }
+
+        $result .= "</ul>";
 
         return $result;
     }

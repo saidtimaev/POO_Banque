@@ -114,8 +114,11 @@ Class Film
 
         foreach($this->castings as $casting)
         {
-            $result .= "<li>".$casting->getRole()." (".$casting->getActeur().")</ul>";
+            $result .= "<li>".$casting->getRole()." (".$casting->getActeur().")</li>";
         }
+
+        $result .= "</ul>";
+
         return $result;
     }
     

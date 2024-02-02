@@ -33,12 +33,25 @@ Class Realisateur extends Personne
 
     public function afficherFilmsRealises()
     {
-        $result = "<h1>Le réalisateur $this a réalisé les films suivants :</h1><br><ul>";
 
-        foreach($this->filmsRealises as $filmsRealises)
+        $dates = [];
+        foreach ($this->filmsRealises as $key => $filmRealise)
         {
-            $result .= "<li>".$filmsRealises."</ul><br>";
+            $dates[$key] = $filmRealise->getDateSortie()->format('U'); // Convert date to Unix timestamp
         }
+
+        array_multisort($dates, SORT_DESC, $this->filmsRealises);
+
+
+        $result = "<h1>Le réalisateur $this a réalisé les films suivants :</h1><ul>";
+
+        foreach($this->filmsRealises as $filmRealise)
+        {
+            
+            $result .= "<li>".$filmRealise." (".$filmRealise->getDateSortie()->format('Y').")</li>";
+        }
+
+        $result .= "</ul>";
         return $result;
     }
 }

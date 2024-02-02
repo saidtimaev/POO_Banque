@@ -30,12 +30,23 @@ Class Acteur extends Personne
 
     public function afficherFilmsActeur()
     {
-        $result = "<h1>L'acteur $this a joué dans les films suivants :</h1><br><ul>";
+
+        $dates = [];
+        foreach ($this->castings as $key => $casting)
+        {
+            $dates[$key] = $casting->getFilm()->getDateSortie()->format('Y-m-d');
+        }
+
+        array_multisort($dates, SORT_DESC, $this->castings);
+
+        $result = "<h1>L'acteur $this a joué dans les films suivants :</h1><ul>";
 
         foreach($this->castings as $casting)
         {
-            $result .= "<li>".$casting->getFilm()."</ul><br>";
+            $result .= "<li>".$casting->getFilm()." (".$casting->getFilm()->getDateSortie()->format('Y').")</li>";
         }
+
+        $result .= "</ul>";
 
         return $result;
 
