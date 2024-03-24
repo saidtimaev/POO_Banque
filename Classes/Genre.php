@@ -34,13 +34,17 @@ Class Genre
     {
 
         $dates = [];
+
+        // Pour chaque objet film
         foreach ($this->films as $film)
         {
+            // On stocke les dates de chaque objet film dans le tableau $dates[]
             $dates[] = $film->getDateSortie()->format('Y-m-d');
         }
-
+        
+        // On trie le tableau films selon le tri du tableau dates
         array_multisort($dates, SORT_DESC, $this->films);
-
+        
         $result = "<h1>Le genre $this est associé à ".count($this->films)." films</h1><ul>";
 
         foreach ($this->films as $film)

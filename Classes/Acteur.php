@@ -20,7 +20,7 @@ Class Acteur extends Personne
 
     public function setCastingsRealises($castingsRealises)
     {
-        $this->castingsRealises = $castingsRealises;
+        $this->castings = $castingsRealises;
 
         return $this;
     }
